@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #darkorange;
+            background-image: url('reji.jpg');  
+            background-size: cover;  
+            background-position: center; 
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto; /* Center the container horizontally */
+             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto; /* Center the container horizontally */
+        background-color: yellow;
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+
+
+        }
+     
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #darkgray;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+
+    <form action="rr.php" method="post">
+        <div class="form-group">
+            <label for="full_name">Full Name:</label><br>
+            <input type="text" id="full_name" name="full_name" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="user_name" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label><br>
+        </div>
+
+        <div class="form-group">
+            <label for="roles">Role:</label>
+            <select id="roles" name="type" class="form-control">
+                <option value="Thero">Thero</option>
+                <option value="Devotee">Devotee</option>
+                <option value="Donator">Donator</option>
+                <option value="Village Officer">Village Officer</option>
+                <option value="Add">Add</option>
+            </select>
+        </div>
+         <div class="form-group">
+            <button type="submit">Register</button>
+        </div>
+         <div class="login-link">
+        Already registered? <a href="l.html">Login</a>
+    </div>
+
+     </form>
+</div>
+
+</body>
+</html>

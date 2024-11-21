@@ -1,0 +1,222 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+     <style>
+        body {
+    background-image: url('loginp.jpg');
+    background-color: darkblue; /* fallback color if image is not available */
+    background-size: cover; /* ensures the background image covers the entire screen */
+    background-position: center; /* centers the background image */
+    font-family: Arial, sans-serif; /* optional: setting a default font */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('your-background-image-url.jpg');
+    background-color: darkorange;  
+    background-size: cover; /* ensures the background image covers the entire screen */
+    background-position: center; /* centers the background image */
+    font-family: Arial, sans-serif; /* optional: setting a default font */
+}
+
+.login-container {
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: pink; /* Change the background color to pink */
+}
+
+.right-content {
+    margin-left: 20px; /* Adjust the space between login form and right content */
+    text-align: right; /* Align content to the right */
+}
+
+.right-content p {
+    margin-bottom: 10px; /* Add space below the paragraph */
+}
+
+
+.login-container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: darkblue; /* transparent white background for the form */
+}
+        /* Your CSS styles here */
+        .login-container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+                background-color: darkblue; /* transparent white background for the form */
+
+         }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-container {
+    max-width: 300px;
+    margin: 0 auto; /* This will center the login container horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: pink; /* Change the background color to pink */
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    margin: 0; /* Remove default body margin */
+    background-image: url('loginp.jpg');
+     background-size: cover; /* ensures the background image covers the entire screen */
+    background-position: center; /* centers the background image */
+    font-family: Arial, sans-serif; /* optional: setting a default font */
+}
+
+.login-container {
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: pink; /* Change the background color to pink */
+}
+
+        .form-group input[type="button"] {
+            cursor: pointer;
+             color: darkblue;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+        }
+        .form-group input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        .form-group a.button {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+        }
+        .form-group a.button:hover {
+            background-color: #0073aa;
+        }
+
+
+    </style>
+</head>
+<body>
+     <div class="container">
+        <div class="login-container">
+         </div>
+        <div class="right-content">
+         </div>
+    </div>
+ 
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+                <option value="Thero">Thero</option>
+                <option value="Devotee">Devotee</option>
+                <option value="Donator">Donator</option>
+                <option value="Village Officer">Village Officer</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="button" value="Login" onclick="attemptLogin()">
+        </div>
+         <div class="form-group">
+            <a href="rr1.html" class="button">Sign Up</a>
+        </div>
+    </div>
+<div class="container">
+        <div class="login-container">
+         </div>
+        <div class="right-content">
+             <img src="sss.jpg" alt="Era Display Image">
+        </div>
+    </div>
+
+    <script>
+        function attemptLogin() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var role = document.getElementById('role').value; // Get the selected role
+
+    // Send the username, password, and role to the server for authentication
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    alert('Login successful!');
+                    // Check the role and redirect accordingly
+                    if (role === 'Devotee') {
+                        window.location.href = 'Devotee.html';
+                    }
+                    if (role === 'Donator') {
+                        window.location.href = 'donator.html';
+                    } 
+                     if (role === 'Thero') {
+                        window.location.href = 'thero.html';
+                    } 
+                     if (role === 'Village Officer') {
+                        window.location.href = 'v.Offier.php';
+                    } 
+                    
+
+                    
+                } else {
+                    alert('Invalid username or password. Please try again.');
+                }
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+
+    xhr.open('POST', 'l.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&role=' + encodeURIComponent(role));
+}
+
+  
+
+    </script>
+  </body>
+</html>
